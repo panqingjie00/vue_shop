@@ -2,13 +2,57 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import { Form, FormItem, Input, Button, Message } from 'element-ui'
+import {
+  Form,
+  FormItem,
+  Input,
+  Button,
+  Message,
+  Container,
+  Header,
+  Aside,
+  Main,
+  Menu,
+  Submenu,
+  MenuItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Card,
+  Row,
+  Col,
+  Table,
+  TableColumn,
+  Switch,
+  Tooltip,
+  Pagination,
+  Dialog,
+  MessageBox
+} from 'element-ui'
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(Button)
+Vue.use(Container)
+Vue.use(Header)
+Vue.use(Aside)
+Vue.use(Main)
+Vue.use(Menu)
+Vue.use(Submenu)
+Vue.use(MenuItem)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Card)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Switch)
+Vue.use(Tooltip)
+Vue.use(Pagination)
+Vue.use(Dialog)
 
 Vue.prototype.$message = Message;
+Vue.prototype.$confirm = MessageBox.confirm;
 
 // 导入全局样式表
 import './assets/css/global.css'
@@ -16,6 +60,12 @@ import './assets/css/global.css'
 import axios from "axios";
 // 配置请求根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// 请求拦截器
+axios.interceptors.request.use((config) => {
+  // 为请求头对象添加 Token 验证的 Authorization 字段
+  config.headers.Authorization = sessionStorage.getItem("token")
+  return config
+})
 // 把 axios 添加到Vue原型对象上
 Vue.prototype.$http = axios
 
