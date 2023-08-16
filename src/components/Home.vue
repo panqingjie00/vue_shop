@@ -98,7 +98,7 @@ export default {
     toggleCollapse() {
       this.isCollapse = !this.isCollapse
     },
-
+    // 保存当前点击的菜单项到session，刷新后不会丢失
     saveNavState(activePath) {
       sessionStorage.setItem("activePath", activePath)
       this.activeIndex = sessionStorage.getItem("activePath")

@@ -1,8 +1,10 @@
 /* 全局样式表 */
-html, body {
+html, body, #app {
     height: 100%;
     margin: 0;
     padding: 0;
+    /* 设置最小宽度，解决浏览器窗口缩小到一定程度后 角色权限小箭头UI换行问题 */
+    min-width: 1366px; 
 }
 
 .el-breadcrumb {
