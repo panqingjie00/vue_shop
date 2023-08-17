@@ -22,3 +22,8 @@ html, body, #app {
 .el-pagination {
     margin-top: 15px;
 }
+
+/* 解决 el-cascader 全部显示，无垂直滚动条的问题 */
+.el-cascader-menu{
+    max-height: 200px;
+}

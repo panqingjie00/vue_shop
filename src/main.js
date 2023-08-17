@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import TreeTable from 'vue-table-with-tree-grid'
+
+Vue.component('tree-table', TreeTable)
 
 import {
   Form,
@@ -30,7 +33,9 @@ import {
   Tag,
   Tree,
   Select,
-  Option
+  Option,
+  Loading,
+  Cascader
 } from 'element-ui'
 Vue.use(Form)
 Vue.use(FormItem)
@@ -58,9 +63,12 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Loading)
+Vue.use(Cascader)
 
 Vue.prototype.$message = Message;
 Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$loading = Loading.service;
 
 // 导入全局样式表
 import './assets/css/global.css'
