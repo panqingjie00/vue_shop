@@ -335,7 +335,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 i[class="el-icon-success"] {
   color: rgb(128, 200, 19);
 }

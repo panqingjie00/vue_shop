@@ -407,7 +407,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .el-tag {
   margin: 10px;
 }
