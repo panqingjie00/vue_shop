@@ -2,6 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import TreeTable from 'vue-table-with-tree-grid'
+// 导入富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+// 导入富文本编辑器的样式
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor, /* { default global options } */)
 
 Vue.component('tree-table', TreeTable)
 
@@ -39,8 +47,15 @@ import {
   Alert,
   Tabs,
   TabPane,
-  Popconfirm
+  Popconfirm,
+  Steps,
+  Step,
+  Radio,
+  Checkbox,
+  CheckboxGroup,
+  Upload
 } from 'element-ui'
+Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
@@ -73,6 +88,12 @@ Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
 Vue.use(Popconfirm)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(Radio)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Upload)
 
 Vue.prototype.$message = Message;
 Vue.prototype.$confirm = MessageBox.confirm;
@@ -93,7 +114,18 @@ axios.interceptors.request.use((config) => {
 // 把 axios 添加到Vue原型对象上
 Vue.prototype.$http = axios
 
-Vue.use(Button)
+// 日期格式化 过滤器
+Vue.filter('dateFormat', function (originData) {
+  const time = new Date(originData)
+  const year = time.getFullYear()
+  const month = (time.getMonth() + 1 + '').padStart(2, '0')
+  const day = (time.getDate() + '').padStart(2, '0')
+  const hour = (time.getHours() + '').padStart(2, '0')
+  const minutes = (time.getMinutes() + '').padStart(2, '0')
+  const second = (time.getSeconds() + '').padStart(2, '0')
+
+  return `${year}-${month}-${day} ${hour}:${minutes}:${second}`
+})
 Vue.config.productionTip = false
 
 new Vue({
