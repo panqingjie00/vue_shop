@@ -251,7 +251,6 @@ export default {
     },
     // 图片移除事件,file 参数为 被移除的文件信息
     handleRemove(file) {
-      console.log(file);
       const tempPath = file.response.data.tmp_path
       const picIndex = this.addForm.pics.findIndex(item => item.pic === tempPath)
       this.addForm.pics.splice(picIndex, 1)

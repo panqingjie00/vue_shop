@@ -14,48 +14,48 @@ Vue.use(VueQuillEditor, /* { default global options } */)
 Vue.component('tree-table', TreeTable)
 
 import {
-  Form,
-  FormItem,
-  Input,
-  Button,
-  Message,
-  Container,
-  Header,
-  Aside,
-  Main,
-  Menu,
-  Submenu,
-  MenuItem,
-  Breadcrumb,
-  BreadcrumbItem,
-  Card,
-  Row,
-  Col,
-  Table,
-  TableColumn,
-  Switch,
-  Tooltip,
-  Pagination,
-  Dialog,
-  MessageBox,
-  Tag,
-  Tree,
-  Select,
-  Option,
-  Loading,
-  Cascader,
-  Alert,
-  Tabs,
-  TabPane,
-  Popconfirm,
-  Steps,
-  Step,
-  Radio,
-  Checkbox,
-  CheckboxGroup,
-  Upload,
-  Timeline,
-  TimelineItem
+    Form,
+    FormItem,
+    Input,
+    Button,
+    Message,
+    Container,
+    Header,
+    Aside,
+    Main,
+    Menu,
+    Submenu,
+    MenuItem,
+    Breadcrumb,
+    BreadcrumbItem,
+    Card,
+    Row,
+    Col,
+    Table,
+    TableColumn,
+    Switch,
+    Tooltip,
+    Pagination,
+    Dialog,
+    MessageBox,
+    Tag,
+    Tree,
+    Select,
+    Option,
+    Loading,
+    Cascader,
+    Alert,
+    Tabs,
+    TabPane,
+    Popconfirm,
+    Steps,
+    Step,
+    Radio,
+    Checkbox,
+    CheckboxGroup,
+    Upload,
+    Timeline,
+    TimelineItem
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Form)
@@ -111,28 +111,28 @@ import axios from "axios";
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // 请求拦截器
 axios.interceptors.request.use((config) => {
-  // 为请求头对象添加 Token 验证的 Authorization 字段
-  config.headers.Authorization = sessionStorage.getItem("token")
-  return config
+    // 为请求头对象添加 Token 验证的 Authorization 字段
+    config.headers.Authorization = sessionStorage.getItem("token")
+    return config
 })
 // 把 axios 添加到Vue原型对象上
 Vue.prototype.$http = axios
 
 // 日期格式化 过滤器
 Vue.filter('dateFormat', function (originData) {
-  const time = new Date(originData)
-  const year = time.getFullYear()
-  const month = (time.getMonth() + 1 + '').padStart(2, '0')
-  const day = (time.getDate() + '').padStart(2, '0')
-  const hour = (time.getHours() + '').padStart(2, '0')
-  const minutes = (time.getMinutes() + '').padStart(2, '0')
-  const second = (time.getSeconds() + '').padStart(2, '0')
+    const time = new Date(originData)
+    const year = time.getFullYear()
+    const month = (time.getMonth() + 1 + '').padStart(2, '0')
+    const day = (time.getDate() + '').padStart(2, '0')
+    const hour = (time.getHours() + '').padStart(2, '0')
+    const minutes = (time.getMinutes() + '').padStart(2, '0')
+    const second = (time.getSeconds() + '').padStart(2, '0')
 
-  return `${year}-${month}-${day} ${hour}:${minutes}:${second}`
+    return `${year}-${month}-${day} ${hour}:${minutes}:${second}`
 })
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  render: h => h(App)
+    router,
+    render: h => h(App)
 }).$mount('#app')

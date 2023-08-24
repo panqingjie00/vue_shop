@@ -85,8 +85,7 @@ export default {
           }).catch((error) => error)
 
         } else {
-          console.log('error submit!!');
-          return false;
+          return this.$message.error("表单校验失败！");
         }
       });
     },
