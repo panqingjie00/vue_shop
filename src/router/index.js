@@ -11,6 +11,7 @@ import Params from '@/components/goods/Params'
 import List from '@/components/goods/List'
 import Add from '@/components/goods/Add'
 import Update from '@/components/goods/Update'
+import Order from '@/components/order/Order'
 
 Vue.use(VueRouter)
 
@@ -63,6 +64,10 @@ const routes = [
             {
                 path: 'update',
                 component: Update,
+            },
+            {
+                path: 'orders',
+                component: Order,
             }
         ]
     }
