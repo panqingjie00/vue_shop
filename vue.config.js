@@ -12,6 +12,7 @@ module.exports = {
                 echarts: 'echarts',
                 'vue-quill-editor': 'VueQuillEditor'
             })
+            // 添加 isProd 属性，判断是否为 发布模式
             config.plugin('html').tap(args => {
                 args[0].isProd = true
                 return args

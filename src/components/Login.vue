@@ -1,5 +1,12 @@
 <template>
   <div class="login_container">
+    <el-alert
+      title="请使用以下游客账号密码登录网站"
+      type="error"
+      center
+      description="账号：visitor   密码：123456  管理员admin账号已被禁用！"
+    >
+    </el-alert>
     <div class="login_box">
       <div class="avater_box">
         <img src="../assets/logo.png" />
@@ -143,5 +150,9 @@ export default {
 .btns {
   display: flex;
   justify-content: flex-end;
+}
+
+.el-alert {
+  height: 100px;
 }
 </style>
