@@ -22,14 +22,14 @@
         <!-- 用户名 -->
         <el-form-item prop="username">
           <el-input
-            v-model="loginForm.username"
+            v-model.trim="loginForm.username"
             prefix-icon="el-icon-user-solid"
           ></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
           <el-input
-            v-model="loginForm.password"
+            v-model.trim="loginForm.password"
             prefix-icon="el-icon-lock"
             show-password
           ></el-input>
